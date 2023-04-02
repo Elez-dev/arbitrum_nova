@@ -428,6 +428,15 @@ swap_arr = (arb_swap, sushi_swap, rpc_swap, slingshot_swap)
 addr_router_arr = [Router.arb_router, Router.sushi_router, Router.rpc_router]
 
 if __name__ == '__main__':
+    print('  _  __         _               _                                      _ _         ')
+    print(' | |/ /___   __| | ___ _ __ ___| | ____ _ _   _  __ _   _____   ____ _| | | ____ _ ')
+    print(" | ' // _ \ / _` |/ _ \ '__/ __| |/ / _` | | | |/ _` | / __\ \ / / _` | | |/ / _` |")
+    print(r' | . \ (_) | (_| |  __/ |  \__ \   < (_| | |_| | (_| | \__ \\ V / (_| | |   < (_| |')
+    print(' |_|\_\___/ \__,_|\___|_|  |___/_|\_\__,_|\__, |\__,_| |___/ \_/ \__,_|_|_|\_\__,_|')
+    print('                                          |___/                                    ', '\n')
+    print('https://t.me/developercode1')
+    print('https://t.me/developercode1')
+    print('https://t.me/developercode1')
     with open("private_keys.txt", "r") as f:
         keys_list = [row.strip() for row in f]
 
@@ -441,7 +450,7 @@ if __name__ == '__main__':
             for router in swaps:
                 rand = random.randint(0, 3)
                 _amount1 = round(random.uniform(amount_min, amount_max), 8)
-                router(privatekey, token_arr[1]['address'], Router.eth, _amount1, token_arr[1]['symbol'])
+                router(privatekey, token_arr[rand]['address'], Router.eth, _amount1, token_arr[1]['symbol'])
             rand = random.randint(0, 2)
             rand_ = random.randint(0, 1)
             swap_arb_buy(privatekey,  token_arr[rand_]['address'], liquidity_amount, token_arr[rand_]['symbol'])
@@ -449,4 +458,3 @@ if __name__ == '__main__':
             add_liquidity(privatekey, token_arr[rand_]['address'], liquidity_amount * 0.9, token_arr[rand_]['symbol'], addr_router_arr[rand])
     for _ in range(number_of_threads):
         threading.Thread(target=main).start()
-
