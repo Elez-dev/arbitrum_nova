@@ -450,7 +450,7 @@ if __name__ == '__main__':
             for router in swaps:
                 rand = random.randint(0, 3)
                 _amount1 = round(random.uniform(amount_min, amount_max), 8)
-                router(privatekey, token_arr[rand]['address'], Router.eth, _amount1, token_arr[1]['symbol'])
+                router(privatekey, token_arr[rand]['address'], Router.eth, _amount1, token_arr[rand]['symbol'])
             rand = random.randint(0, 2)
             rand_ = random.randint(0, 1)
             swap_arb_buy(privatekey,  token_arr[rand_]['address'], liquidity_amount, token_arr[rand_]['symbol'])
