@@ -10,6 +10,10 @@ number_of_threads = 1
 amount_max = 0.00005          #
 amount_min = 0.00001          # price in ETH
 liquidity_amount = 0.000001   #
+
+time_delay_min = 30  # Минимальная и
+time_delay_max = 60  # Максимальная задержка между акками в секундах
+
 gas = 400000
 RPC = "https://nova.arbitrum.io/rpc"
 # --------------------------------------
@@ -119,9 +123,9 @@ def swap_slingshot(private_key, token_to_buy, token_to_sold, amount, symbol, ret
 
 def slingshot_swap(private_key, token_to_buy, token_to_sold, amount, symbol):
     swap_slingshot(private_key, token_to_buy, token_to_sold, amount, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
     swap_slingshot(private_key, token_to_sold, token_to_buy, amount, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
 
 
 def swap_arb_buy(private_key, token_to_buy, amount, symbol, retry=0):
@@ -216,9 +220,9 @@ def swap_arb_sold(private_key, token_to_sold, symbol, retry=0):
 
 def arb_swap(private_key, token_to_buy, token_to_sold, amount, symbol):
     swap_arb_buy(private_key, token_to_buy, amount, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
     swap_arb_sold(private_key, token_to_buy, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
 
 
 def swap_rpc_buy(private_key, token_to_buy, amount, symbol, retry=0):
@@ -313,9 +317,9 @@ def swap_rpc_sold(private_key, token_to_sold, symbol, retry=0):
 
 def rpc_swap(private_key, token_to_buy, token_to_sold, amount, symbol):
     swap_rpc_buy(private_key, token_to_buy, amount, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
     swap_rpc_sold(private_key, token_to_buy, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
 
 
 def swap_sushi_buy(private_key, token_to_buy, amount, symbol, retry=0):
@@ -410,9 +414,9 @@ def swap_sushi_sold(private_key, token_to_sold, symbol, retry=0):
 
 def sushi_swap(private_key, token_to_buy, token_to_sold, amount, symbol):
     swap_sushi_buy(private_key, token_to_buy, amount, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
     swap_sushi_sold(private_key, token_to_buy, symbol)
-    time.sleep(random.randint(20, 40))
+    time.sleep(random.randint(time_delay_min, time_delay_max))
 
 
 def approve(private_key, token_to_approve, address_to_approve, symbol, retry=0):
