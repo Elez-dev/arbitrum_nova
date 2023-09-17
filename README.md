@@ -14,6 +14,8 @@ number_of_threads - number of simultaneously working wallets
 
 And yes, I do not advise you to do swaps for LARGE AMOUNTS. I didn't set the slipage, because the tranzas fail
 
+https://mirror.xyz/wiedzmin.eth/PGqOORCLdNHe6x1ph_t2ALhhwqQIYn3KzvoZSbzZ5Rw
+
 -------------------------------------------------------------------------------------------------------------------
 
 Скрипт прогревает кошельки арбитрум нова.
@@ -29,3 +31,5 @@ liquidity_amount - сколько хотите лить ликвидности
 private_keys.txt - суда грузить приватники
 
 И да, свапы на БОЛЬШИЕ СУММЫ делать не советую. Слипаж я не выставлял, т.к. транзы фейлятся
+
+https://mirror.xyz/wiedzmin.eth/Z06W81VrxO9KI88vkcxeW0Lc8f2nBo5Wdyqce0HTNm8
