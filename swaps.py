@@ -78,7 +78,7 @@ class Worker(Thread):
             session = requests.Session()
             session.mount('http://', adapter)
             session.mount('https://', adapter)
-            web3 = Web3(Web3.HTTPProvider(RPC, request_kwargs={'timeout': 60}, session=session))
+            web3 = Web3(Web3.HTTPProvider(RPC_NOVA, request_kwargs={'timeout': 60}, session=session))
             address = web3.eth.account.from_key(private_key).address
 
             log.info('----------------------------------------------------------------------------')
