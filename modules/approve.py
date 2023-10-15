@@ -12,7 +12,7 @@ class Approve(TgBot):
         self.log = log
         self.web3 = web3
         self.address_wallet = self.web3.eth.account.from_key(private_key).address
-        self.token_abi = js.load(open('./abi/Token.txt'))
+        self.token_abi = js.load(open('./abi/token.txt'))
 
     def approve(self, token_to_approve, address_to_approve, retry=0):
         token_contract = self.web3.eth.contract(address=token_to_approve, abi=self.token_abi)
