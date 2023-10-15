@@ -47,8 +47,6 @@ class ArbSwap(Approve, TgBot):
             ).build_transaction({
                 'from': self.address_wallet,
                 'value': value,
-                'maxFeePerGas': self.web3.eth.gas_price,
-                'maxPriorityFeePerGas': 0,
                 'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
             })
 
@@ -149,8 +147,6 @@ class ArbSwap(Approve, TgBot):
                 (int(time.time()) + 10000)  # deadline
             ).build_transaction({
                 'from': self.address_wallet,
-                'maxFeePerGas': self.web3.eth.gas_price,
-                'maxPriorityFeePerGas': 0,
                 'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
             })
 
@@ -252,8 +248,6 @@ class ArbSwap(Approve, TgBot):
                 (int(time.time()) + 10000),  # deadline
             ).build_transaction({
                 'from': self.address_wallet,
-                'maxFeePerGas': self.web3.eth.gas_price,
-                'maxPriorityFeePerGas': 0,
                 'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
                 'value': amount_out
             })

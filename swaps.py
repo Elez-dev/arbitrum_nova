@@ -40,6 +40,9 @@ token_arr = [
     }
 ]
 
+token_arr1 = token_arr.copy()
+del token_arr1[2]
+
 
 def shuffle(wallets_list):
     if shuffle_wallets is True:
@@ -147,7 +150,7 @@ class Worker(Thread):
                     time.sleep(random.randint(time_delay_min, time_delay_max))
 
                     if liquiditi_sushi is True and flag_liquiditi_sushi is False:
-                        token_to_swap = random.choice(token_arr)
+                        token_to_swap = random.choice(token_arr1)
                         value_liquid = random.uniform(liquidity_prescale_min, liquidity_prescale_max)
                         res = sushi.buy_token(token_to_swap, value_liquid)
                         if res == 'balance':
@@ -160,7 +163,7 @@ class Worker(Thread):
                         flag_liquiditi_sushi = True
 
                     if liquiditi_rpc is True and flag_liquiditi_rpc is False:
-                        token_to_swap = random.choice(token_arr)
+                        token_to_swap = random.choice(token_arr1)
                         value_liquid = random.uniform(liquidity_prescale_min, liquidity_prescale_max)
                         res = rpc.buy_token(token_to_swap, value_liquid)
                         if res == 'balance':
@@ -173,7 +176,7 @@ class Worker(Thread):
                         flag_liquiditi_rpc = True
 
                     if liquiditi_arb is True and flag_liquiditi_arb is False:
-                        token_to_swap = random.choice(token_arr)
+                        token_to_swap = random.choice(token_arr1)
                         value_liquid = random.uniform(liquidity_prescale_min, liquidity_prescale_max)
                         res = arb.buy_token(token_to_swap, value_liquid)
                         if res == 'balance':
@@ -211,7 +214,7 @@ class Worker(Thread):
 
                         if liquiditi_sushi is True and flag_liquiditi_sushi is False:
                             if liquidity_sushi_index == j:
-                                token_to_swap = random.choice(token_arr)
+                                token_to_swap = random.choice(token_arr1)
                                 value_liquid = random.uniform(liquidity_prescale_min, liquidity_prescale_max)
                                 res = sushi.buy_token(token_to_swap, value_liquid)
                                 if res == 'balance':
@@ -225,7 +228,7 @@ class Worker(Thread):
 
                         if liquiditi_rpc is True and flag_liquiditi_rpc is False:
                             if liquidity_rpc_index == j:
-                                token_to_swap = random.choice(token_arr)
+                                token_to_swap = random.choice(token_arr1)
                                 value_liquid = random.uniform(liquidity_prescale_min, liquidity_prescale_max)
                                 res = rpc.buy_token(token_to_swap, value_liquid)
                                 if res == 'balance':
@@ -239,7 +242,7 @@ class Worker(Thread):
 
                         if liquiditi_arb is True and flag_liquiditi_arb is False:
                             if liquidity_arb_index == j:
-                                token_to_swap = random.choice(token_arr)
+                                token_to_swap = random.choice(token_arr1)
                                 value_liquid = random.uniform(liquidity_prescale_min, liquidity_prescale_max)
                                 res = arb.buy_token(token_to_swap, value_liquid)
                                 if res == 'balance':
@@ -250,6 +253,8 @@ class Worker(Thread):
                                     break
                                 time.sleep(random.randint(time_delay_min, time_delay_max))
                                 flag_liquiditi_arb = True
+
+                random.shuffle(arr_buy)
 
             session.close()
 

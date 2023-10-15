@@ -19,8 +19,6 @@ class Approve(TgBot):
         max_amount = 2 ** 256 - 1
         dick = {
             'from': self.address_wallet,
-            'maxFeePerGas': self.web3.eth.gas_price,
-            'maxPriorityFeePerGas': 0,
             'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
         }
         try:

@@ -34,8 +34,6 @@ class OfBridge(TgBot):
                 'data': '0x439370b1',
                 'from': self.address_wallet,
                 'to': self.address,
-                'maxFeePerGas': self.web3.eth.gas_price,
-                'maxPriorityFeePerGas': Web3.to_wei(0.1, 'gwei'),
                 'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
                 'value': value
             }
