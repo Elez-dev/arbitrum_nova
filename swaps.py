@@ -257,6 +257,9 @@ class Worker(Thread):
                 random.shuffle(arr_buy)
 
             session.close()
+            delay = random.randint(TIME_DELAY_ACC_MIN, TIME_DELAY_ACC_MAX)
+            log.info(f'Аккаунт завершен, сплю {delay} секунд и перехожу к следующему')
+            time.sleep(delay)
 
 
 if __name__ == '__main__':
