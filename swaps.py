@@ -46,8 +46,8 @@ del token_arr1[2]
 
 def shuffle(wallets_list):
     if shuffle_wallets is True:
-        random.shuffle(wallets_list)
         numbered_wallets = list(enumerate(wallets_list, start=1))
+        random.shuffle(numbered_wallets)
     elif shuffle_wallets is False:
         numbered_wallets = list(enumerate(wallets_list, start=1))
     else:
