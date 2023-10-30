@@ -25,6 +25,7 @@ class Mint(TgBot):
                 'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
                 'maxFeePerGas': self.web3.eth.gas_price,
                 'maxPriorityFeePerGas': 0,
+                'value': Web3.to_wei(0.000056, 'ether')
             }
 
             gas = self.web3.eth.estimate_gas(txn)
