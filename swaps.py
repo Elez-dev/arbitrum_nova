@@ -269,10 +269,19 @@ class Worker(Thread):
                     random.shuffle(arr_buy)
 
             else:
-                sushi = SushiSwap(private_key, web3, str_number, log)
-                arb = ArbSwap(private_key, web3, str_number, log)
-                rpc = RpcSwap(private_key, web3, str_number, log)
-                dexs = [sushi, arb, rpc]
+                dexs = []
+                if SUSHISWAP is True:
+                    sushi = SushiSwap(private_key, web3, str_number, log)
+                    dexs.append(sushi)
+
+                if ARBSWAP is True:
+                    arb = ArbSwap(private_key, web3, str_number, log)
+                    dexs.append(arb)
+
+                if RPCSWAP is True:
+                    rpc = RpcSwap(private_key, web3, str_number, log)
+                    dexs.append(rpc)
+
                 random.shuffle(dexs)
                 for dex in dexs:
                     for token in token_arr1:
